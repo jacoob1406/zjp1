@@ -1,124 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mini-project - JS Complexity - MFI UG" />
+    <meta
+      name="keywords"
+      content="JavaScript, Complexity, Halstead complexity measures"
+    />
+    <meta name="author" content="Jakub Lemka" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="icon" href="./assets/JS_Icon.png" />
+    <title>ZJPROG - 2018 - JS complexity - Jakub Lemka</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mini-project - JS Complexity - MFI UG">
-  <meta name="keywords" content="JavaScript, Complexity, Halstead complexity measures">
-  <meta name="author" content="Jakub Lemka">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="stylesheet" href="./styles/normalize.css">
-  <link rel="icon" href="./assets/JS_Icon.png">
-  <title>ZJPROG - 2018 - JS complexity - Jakub Lemka</title>
-</head>
-
-<body>
-  <div class="heading__container">
-    <h1>JS Complexity Analysis for VSC - v. 2.0.0</h1>
-  </div>
-  <div class="main__container">
-    <div class="column">
-      <ul>
-        <li>SLOC - source lines of code</li>
-        <li># params</li>
-        <li>Complexity - cyclomatic complexity</li>
-        <li>Difficulty - Halstead complexity measures</li>
-        <li>Est # bugs</li>
-      </ul>
-      <h3>Halstead complexity measures</h3>
-      <ul>
-        <li class="operators">
-          &eta;<sub>1</sub> = the number of distinct operators
-        </li>
-        <li class="operands">
-          &eta;<sub>2</sub> = the number of distinct operands
-        </li>
-        <li>N<sub>1</sub> = the total number of operators</li>
-        <li>N<sub>2</sub> = the total number of operands</li>
-        <li>Difficulty:</li>
+  <body>
+    <div class="heading__container">
+      <h1>JS Complexity Analysis for VSC - v. 2.0.0</h1>
+    </div>
+    <div class="main__container">
+      <div class="column">
         <ul>
-          <li>D = &eta;<sub>1</sub> / 2 * N<sub>2</sub> / &eta;<sub>2</sub></li>
+          <li>SLOC - source lines of code</li>
+          <li># params</li>
+          <li>Complexity - cyclomatic complexity</li>
+          <li>Difficulty - Halstead complexity measures</li>
+          <li>Est # bugs</li>
         </ul>
-      </ul>
+        <h3>Halstead complexity measures</h3>
+        <ul>
+          <li class="operators">
+            &eta;<sub>1</sub> = the number of distinct operators
+          </li>
+          <li class="operands">
+            &eta;<sub>2</sub> = the number of distinct operands
+          </li>
+          <li>N<sub>1</sub> = the total number of operators</li>
+          <li>N<sub>2</sub> = the total number of operands</li>
+          <li class="bold">Difficulty:</li>
+          <ul class="bold">
+            <li>
+              D = &eta;<sub>1</sub> / 2 * N<sub>2</sub> / &eta;<sub>2</sub>
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div class="column">
+        <p>
+          function <span class="operators">u</span>(<span class="operands"
+            >e</span
+          >) <span class="operators">{</span> <br />
+          &nbsp;&nbsp;<span class="operators">if</span> (<span class="operands"
+            >"number"</span
+          >
+          <span class="operators">== typeof</span> e) return e; <br />
+          &nbsp;&nbsp;if (<span class="operators">a</span>(e))
+          <span class="operators">return</span> <span class="operands">s</span>;
+          <br />
+          &nbsp;&nbsp;if (<span class="operators">i</span
+          ><span class="operators">(</span>e<span class="operators">)</span>) {
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="operators">var</span>
+          <span class="operands">t</span> =
+          <span class="operands">"function"</span> == typeof e.<span
+            class="operators"
+            >valueOf</span
+          >
+          <span class="operators">?</span> e.valueOf()
+          <span class="operators">:</span> e; <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;e = i(t) ? t <span class="operators">+</span>
+          <span class="operands">""</span> : t <br />
+          &nbsp;&nbsp;} <br />
+          &nbsp;&nbsp;if (<span class="operands">"string"</span>
+          <span class="operators">!=</span> typeof e) return
+          <span class="operands">0</span> <span class="operators">===</span> e ?
+          e : +e; <br />
+          &nbsp;&nbsp;e = e.<span class="operators">replace</span>(<span
+            class="operands"
+            >l</span
+          ><span class="operators">,</span>
+          <span class="operands">""</span>)<span class="operators">;</span>
+          <br />
+          &nbsp;&nbsp;var <span class="operands">n</span> = m.<span
+            class="operators"
+            >test</span
+          >(e); <br />
+          &nbsp;&nbsp;return n <span class="operators">||</span> b.test(e) ?
+          <span class="operators">v</span>(e.<span class="operators">slice</span
+          >(2), n ? <span class="operands">2</span> :
+          <span class="operands">8</span>) : p<span class="operators">.</span
+          >test(e) ? s : +e <br />
+          <span class="operators">}</span>
+        </p>
+      </div>
+      <div class="column">
+        <ul>
+          <li>SLOC: 12</li>
+          <li># params: 1</li>
+          <li>Cyclomatic complexity: 12</li>
+          <li>
+            Maintainability*: <span class="maintainability__green">58</span>
+          </li>
+          <li>Difficulty: 16.9</li>
+          <li>Est # bugs: 0.2</li>
+        </ul>
+        <ul>
+          <li class="operators">
+            &eta;<sub>1</sub> = the number of distinct operators = 22
+          </li>
+          <li class="operands">
+            &eta;<sub>2</sub> = the number of distinct operands = 13
+          </li>
+          <li>N<sub>2</sub> = the total number of operands = 20</li>
+          <div class="score">D = 22 / 2 * 20 / 13 &asymp; 16.9</div>
+        </ul>
+      </div>
     </div>
-    <div class="column">
-      <p>function <span class="operators">u</span>(<span class="operands">e</span>) <span class="operators">{</span>
-        <br>
-        &nbsp;&nbsp;<span class="operators">if</span> (<span class="operands">"number"</span> <span class="operators">==
-          typeof</span> e) return e;
-        <br>
-        &nbsp;&nbsp;if (<span class="operators">a</span>(e)) <span class="operators">return</span> <span class="operands">s</span>;
-        <br>
-        &nbsp;&nbsp;if (<span class="operators">i</span><span class="operators">(</span>e<span class="operators">)</span>)
-        {
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="operators">var</span> <span class="operands">t</span> = <span class="operands">"function"</span>
-        ==
-        typeof
-        e.<span class="operators">valueOf</span> <span class="operators">?</span> e.valueOf() <span class="operators">:</span>
-        e;
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;e = i(t) ? t <span class="operators">+</span> <span class="operands">""</span> : t
-        <br>
-        &nbsp;&nbsp;}
-        <br>
-        &nbsp;&nbsp;if (<span class="operands">"string"</span> <span class="operators">!=</span> typeof e) return <span
-          class="operands">0</span> <span class="operators">===</span>
-        e ? e : +e;
-        <br>
-        &nbsp;&nbsp;e = e.<span class="operators">replace</span>(<span class="operands">l</span><span class="operators">,</span>
-        <span class="operands">""</span>)<span class="operators">;</span>
-        <br>
-        &nbsp;&nbsp;var <span class="operands">n</span> = m.<span class="operators">test</span>(e);
-        <br>
-        &nbsp;&nbsp;return n <span class="operators">||</span> b.test(e) ? <span class="operators">v</span>(e.<span
-          class="operators">slice</span>(2),
-        n ? <span class="operands">2</span>
-        :
-        <span class="operands">8</span>) : p<span class="operators">.</span>test(e) ? s :
-        +e
-        <br>
-        <span class="operators">}</span>
-      </p>
+    <div class="sub__container">
+      <div class="difficulty">
+        The difficulty measure, one of Halstead Complexity Measuers introduced
+        by Maurice Howard Halstead in 1977, is related to the difficulty of the
+        program to write or understand, e.g. when doing code review. When it's
+        bigger than lines of code it is really bad written code (WTF?!)
+      </div>
+      <div class="maintainability">
+        <p>
+          *Maintainability Index = MAX(0,(171 - 5.2 * ln(Halstead Volume) - 0.23
+          * (Cyclomatic Complexity) - 16.2 * ln(Lines of Code))*100 / 171)
+        </p>
+        <ul>
+          <li>High value means better maintainability</li>
+          <li class="maintainability__green">
+            green rating is between 20 and 100
+          </li>
+          <li class="maintainability__yellow">
+            yellow rating is between 10 and 19
+          </li>
+          <li class="maintainability__red">
+            red rating is a rating between 0 and 9
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="column">
-      <ul>
-        <li>SLOC: 12</li>
-        <li># params: 1</li>
-        <li>Cyclomatic complexity: 12</li>
-        <li>Maintainability*: <span class="maintainability__green">58</span></li>
-        <li>Difficulty: 16.9</li>
-        <li>Est # bugs: 0.2</li>
-      </ul>
-      <ul>
-        <li class="operators">
-          &eta;<sub>1</sub> = the number of distinct operators = 22
-        </li>
-        <li class="operands">
-          &eta;<sub>2</sub> = the number of distinct operands = 13
-        </li>
-        <li>
-          N<sub>2</sub> = the total number of operands = 20
-        </li>
-        <div class="score">D = 22 / 2 * 20 / 13 &asymp; 16.9</div>
-      </ul>
-    </div>
-  </div>
-  <div class="sub__container">
-    <p>*Maintainability Index = MAX(0,(171 - 5.2 * ln(Halstead Volume) - 0.23 * (Cyclomatic Complexity) - 16.2 *
-      ln(Lines
-      of Code))*100 / 171)</p>
-    <ul>
-      <li>High value means better maintainability</li>
-      <li class="maintainability__green">green rating is between 20 and 100</li>
-      <li class="maintainability__yellow">yellow rating is between 10 and 19</li>
-      <li class="maintainability__red">red rating is a rating between 0 and 9 </li>
-    </ul>
-  </div>
-  <a class="arrowBack" href="index.html">&larr;</a>
-</body>
-
+    <a class="arrowBack" href="index.html">&larr;</a>
+  </body>
 </html>
